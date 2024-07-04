@@ -1,0 +1,3 @@
+# Important! clang-format likes to add a space after //; this breaks shebangs!
+CommentPragmas: "^[^ ]"
+IndentPPDirectives: AfterHash

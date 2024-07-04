@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    [
+      -std=c++2c,
+      -Wno-everything,
+      -fconstexpr-steps=10000000,
+      -DPROMPT="Once upon a time there was a ",
+      -DCAT_FILE="/home/tor/static_antics/README.md",
+      -DGREP_FILE="/home/tor/static_antics/README.md",
+      -DGREP_PATTERN=static_assert,
+      -DGREP_CONTEXT=2,
+    ]
+  # Compiler: /usr/local/gcc-14.1.0/bin/gcc-14.1.0
