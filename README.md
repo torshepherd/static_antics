@@ -1,4 +1,4 @@
-# static_tomfoolery
+# static_antics
 
 Fun with "P2741: user-generated static_assert messages"
 
