@@ -6,7 +6,7 @@
 #include "../include/utils.hpp"
 
 #include "../external/ctre.hpp"
-#include "../external/fmt-10.2.1/include/fmt/compile.h"
+#include "../external/fmt-master/include/fmt/compile.h"
 
 #include <algorithm>
 #include <array>

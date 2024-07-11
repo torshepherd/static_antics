@@ -1,11 +1,11 @@
 /// The following code should NOT be copied or used in other codebases. Not
 /// because it's secret, but because it's highly *terrible*
 
-#include "../include/escape.h"
+#include "../include/escape.h" // IWYU pragma: keep
 #include "../include/support.h"
 #include "../include/utils.hpp"
 
-#include "../external/fmt-10.2.1/include/fmt/compile.h"
+#include "../external/fmt-master/include/fmt/compile.h"
 
 #include <algorithm>
 #include <cstddef>

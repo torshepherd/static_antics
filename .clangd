@@ -9,5 +9,6 @@ CompileFlags:
       -DGREP_FILE="/home/tor/static_antics/README.md",
       -DGREP_PATTERN=static_assert,
       -DGREP_CONTEXT=2,
+      -DGUESS="CRANE HOUSE etc"
     ]
   # Compiler: /usr/local/gcc-14.1.0/bin/gcc-14.1.0

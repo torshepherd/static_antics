@@ -34,4 +34,5 @@
 # Downloaded fmt headers, get them using:
 #   wget https://github.com/fmtlib/fmt/releases/download/10.2.1/fmt-10.2.1.zip
 fmt-10*/
+fmt-master*/
 ctre.hpp
