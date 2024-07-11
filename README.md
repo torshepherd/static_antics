@@ -36,12 +36,16 @@ With the advent of C23's `#embed` feature, we can now take user input at compile
 
 ### [cat](antics/static_cat.cpp)
 
+Godbolt: https://compiler-explorer.com/z/EzEY6Tse9
+
 Usage:
 ```
 clang static_cat.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DCAT_FILE="path/to/file"
 ```
 
 ### [grep](antics/static_grep.cpp)
+
+Godbolt: https://compiler-explorer.com/z/jTdE13P4z
 
 Usage:
 ```
