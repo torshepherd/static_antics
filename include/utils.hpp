@@ -3,6 +3,7 @@
 #include <cctype>
 #include <concepts>
 #include <cstddef>
+#include <cstdlib>
 #include <limits>
 #include <string_view>
 
@@ -95,3 +96,12 @@ constexpr size_t numPlaces(T n) {
      and adjust this final return as well. */
   return 10;
 }
+
+template <typename T> constexpr T constexpr_abs(const T &t) {
+  return t < T{} ? -t : t;
+}
+
+static_assert(constexpr_abs(0.1) == 0.1);
+static_assert(constexpr_abs(-0.1) == 0.1);
+static_assert(constexpr_abs(-1) == 1);
+static_assert(constexpr_abs(1) == 1);

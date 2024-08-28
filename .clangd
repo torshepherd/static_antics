@@ -4,11 +4,14 @@ CompileFlags:
       -std=c++2c,
       -Wno-everything,
       -fconstexpr-steps=10000000,
-      -DPROMPT="Once upon a time there was a ",
       -DCAT_FILE="/home/tor/static_antics/README.md",
       -DGREP_FILE="/home/tor/static_antics/README.md",
       -DGREP_PATTERN=static_assert,
       -DGREP_CONTEXT=2,
-      -DGUESS="CRANE HOUSE etc"
+      -DGUESS="CRANE HOUSE etc",
+     
+      -DWEIGHTS="/home/tor/static_antics/external/llama-c/stories15M.bin",
+      -DTOKENIZER="/home/tor/static_antics/external/llama-c/tokenizer.bin",
+      -DPROMPT="Once upon a time there was a ",
     ]
   # Compiler: /usr/local/gcc-14.1.0/bin/gcc-14.1.0

@@ -1,4 +1,5 @@
 #pragma once
+// IWYU pragma: always_keep
 
 #include "../external/fmt-master/include/fmt/compile.h"
 #include "../include/support.h"

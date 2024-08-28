@@ -16,11 +16,11 @@
 #include <string_view>
 
 #ifndef GREP_FILE
-#  error Usage: clang static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
+#  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
 #elif !defined(GREP_PATTERN)
-#  error Usage: clang static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
+#  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
 #elif !defined(GREP_CONTEXT)
-#  error Usage: clang static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
+#  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
 #else
 #  define QUOTED_PATH STRINGIZE_VALUE_OF(GREP_FILE)
 

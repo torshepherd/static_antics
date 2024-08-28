@@ -13,7 +13,7 @@
 #include <string>
 
 #ifndef GUESS
-#  error Usage: clang static_wordle.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGUESS="CRANE HOUSE etc"
+#  error Usage: CC static_wordle.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGUESS="CRANE HOUSE etc"
 #else
 
 static constexpr auto actual_word = wordle_words[42];

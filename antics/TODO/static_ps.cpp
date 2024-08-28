@@ -1,3 +1,5 @@
+// Equivalent to "ps -A"
+
 // /proc/sys/kernel/pid_max (Not available on clang)
 //
 // 32768
@@ -299,11 +301,46 @@
                     The thread's exit status in the form reported by
                     waitpid(2).
 */
+#include "../../external/fmt-master/include/fmt/compile.h"
+#include "../../include/support.h"
 #include "../../include/utils.hpp"
-#include <boost/preprocessor/repeat.hpp>
+#include <string>
 
-#define PID_COUNTER 0
 static constexpr char *pids[] = {
-#define __COUNTER__ 0
+
 #include "../../include/ps_recursive.h"
+
 };
+
+constexpr auto done = false;
+static_assert(
+    // clang-format off: align left for nice formatting!
+done
+    // clang-format on
+    ,
+
+    [] -> std::string {
+      char formatted_buffer[4096]{};
+      char buffer[5000]{};
+
+      auto *running = formatted_buffer;
+      for (const auto *pid : pids) {
+        running = fmt::format_to(running, FMT_COMPILE("{}\n"), pid);
+      }
+
+      fmt::format_to(buffer,
+                     FMT_COMPILE(
+#if SUPPORTS_ESCAPES
+                         ESC_MOVE_TO_START ESC_CLEAR_LINE ESC_SET_FG_DEFAULT
+#else
+                         "\n\n"
+#endif
+                         "{}"
+#if SUPPORTS_ESCAPES
+                         ESC_SET_INVISIBLE
+#endif
+                         ),
+                     formatted_buffer);
+
+      return buffer;
+    }());

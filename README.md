@@ -32,6 +32,8 @@ clang static_wordle.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -D
 
 ## #embed
 
+Check if GCC supports embed yet here: https://godbolt.org/z/5hKx3Kz1a
+
 With the advent of C23's `#embed` feature, we can now take user input at compile-time not just from preprocessor defines, but also from file input! That opens the door to a bunch more programs we can implement:
 
 ### [cat](antics/static_cat.cpp)

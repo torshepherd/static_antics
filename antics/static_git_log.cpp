@@ -13,31 +13,19 @@
 #include <string>
 #include <string_view>
 
-#ifndef CAT_FILE
-#  error Usage: CC static_cat.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DCAT_FILE="path/to/file"
+#if !__has_embed(".git/logs/refs/heads/main")
+static_assert(false, "Fatal: not a git repository!");
+static constexpr const char raw_contents[] = "";
 #else
-#  define QUOTED_PATH STRINGIZE_VALUE_OF(CAT_FILE)
-
-#  if __has_embed(QUOTED_PATH)
-#    define FOUND_FILE
-static constexpr auto filename = QUOTED_PATH;
 static constexpr const char raw_contents[] = {
-#    embed QUOTED_PATH
+#  embed ".git/logs/refs/heads/main"
 };
-#  elif __has_embed(CAT_FILE)
-#    define FOUND_FILE
-static constexpr auto filename = CAT_FILE;
-static constexpr const char raw_contents[] = {
-#    embed CAT_FILE
-};
-#  endif
+#endif
 
-#  ifdef FOUND_FILE
 static constexpr std::string_view contents{std::begin(raw_contents),
                                            std::end(raw_contents)};
-static constexpr size_t number_of_lines =
-    std::ranges::count(contents, '\n') + 1;
-static constexpr size_t max_digits = numPlaces(number_of_lines);
+
+// static constexpr
 
 constexpr auto done = false;
 static_assert(
@@ -67,22 +55,17 @@ done
           __builtin_strlen(filename) + numPlaces(contents.size()));
       fmt::format_to(buffer,
                      FMT_COMPILE(
-#    if SUPPORTS_ESCAPES
+#if SUPPORTS_ESCAPES
                          ESC_MOVE_TO_START ESC_CLEAR_LINE ESC_SET_FG_DEFAULT
-#    else
+#else
                          "\n\n"
-#    endif
+#endif
                          "{}"
-#    if SUPPORTS_ESCAPES
+#if SUPPORTS_ESCAPES
                          ESC_SET_INVISIBLE
-#    endif
+#endif
                          ),
                      formatted_buffer);
 
       return buffer;
     }());
-
-#  else
-#    error File not found!
-#  endif
-#endif
