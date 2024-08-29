@@ -1,11 +1,11 @@
 // TODO: When compiling with gcc, output with colors, or better yet with kitty images
 
-#include "../include/escape.h" // IWYU pragma: keep
-#include "../include/support.h"
-#include "../include/utils.hpp"
+#include "../../include/escape.h" // IWYU pragma: keep
+#include "../../include/support.h"
+#include "../../include/utils.hpp"
 
-#include "../external/fmt-master/include/fmt/compile.h"
-#include "../external/wordle_words.h"
+#include "../../external/fmt-master/include/fmt/compile.h"
+#include "../../external/wordle_words.h"
 
 #include <cctype>
 #include <cstddef>
