@@ -32,7 +32,7 @@
 *.app
 
 fmt-10*/
-fmt-master*/
+fmt-11.1.3*/
 ctre.hpp
 llama-c/
 # rick.png

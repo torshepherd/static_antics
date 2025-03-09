@@ -4,7 +4,7 @@
 #include "../../include/support.h"
 #include "../../include/utils.hpp"
 
-#include "../../external/fmt-master/include/fmt/compile.h"
+#include "../../external/fmt-11.1.3/include/fmt/compile.h"
 #include "../../external/wordle_words.h"
 
 #include <cctype>

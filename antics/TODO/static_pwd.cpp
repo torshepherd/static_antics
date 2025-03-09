@@ -1,7 +1,7 @@
 /// The following code should NOT be copied or used in other codebases. Not
 /// because it's secret, but because it's highly *terrible*
 
-#include "../../external/fmt-master/include/fmt/compile.h"
+#include "../../external/fmt-11.1.3/include/fmt/compile.h"
 #include "../../include/escape.h"
 #include "../../include/support.h"
 

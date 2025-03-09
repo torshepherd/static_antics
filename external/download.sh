@@ -1,7 +1,6 @@
-wget https://github.com/fmtlib/fmt/releases/download/10.2.1/fmt-10.2.1.zip
-unzip -o fmt-10.2.1.zip
-rm fmt-10.2.1.zip
-# TODO: This should be master actually, not 10.2. 10.2 doesn't compile
+wget https://github.com/fmtlib/fmt/releases/download/11.1.3/fmt-11.1.3.zip
+unzip -o fmt-11.1.3.zip
+rm fmt-11.1.3.zip
 
 wget https://raw.githubusercontent.com/hanickadot/compile-time-regular-expressions/main/single-header/ctre.hpp
 

@@ -1,7 +1,7 @@
 #pragma once
 // IWYU pragma: always_keep
 
-#include "../external/fmt-master/include/fmt/compile.h"
+#include "../external/fmt-11.1.3/include/fmt/compile.h"
 #include "../include/support.h"
 
 #define DEL "\x7f"

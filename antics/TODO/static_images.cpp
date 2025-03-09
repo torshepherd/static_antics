@@ -1,5 +1,5 @@
 
-#include "../../external/fmt-master/include/fmt/compile.h"
+#include "../../external/fmt-11.1.3/include/fmt/compile.h"
 
 #include "../../include/escape.h" // IWYU pragma: keep
 #include "../../include/support.h"
