@@ -1,6 +1,13 @@
 /// The following code should NOT be copied or used in other codebases. Not
 /// because it's secret, but because it's highly *terrible*
 
+// For example:
+/* clang-with-args \
+     $PATH_TO_STATIC_GREP \
+     -DGREP_FILE="$PATH_TO_STATIC_GREP" \
+     -DGREP_PATTERN="static.*size"
+ */
+
 #include "../include/escape.h"
 #include "../include/support.h"
 #include "../include/utils.hpp"
@@ -19,7 +26,7 @@
 #  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
 #elif !defined(GREP_PATTERN)
 #  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
-#elif !defined(GREP_CONTEXT)
+// #elif !defined(GREP_CONTEXT)
 #  error Usage: CC static_grep.cpp -std=c++2c -Wno-everything -fconstexpr-steps=10000000 -DGREP_FILE="path/to/file" -DGREP_PATTERN="^my.*pattern$" -DGREP_CONTEXT=2
 #else
 #  define QUOTED_PATH STRINGIZE_VALUE_OF(GREP_FILE)
